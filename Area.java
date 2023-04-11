@@ -3,16 +3,23 @@
 */
 
 import java.util.Scanner;
-public class Area
-{
-    public static void main(String[] args) 
-{
-        int r;
-        double pi = 3.14, area;
-        Scanner s = new Scanner(System.in);
-        System.out.print("Enter radius of circle:");
-        r = s.nextInt();
-        area = pi * r * r;
-        System.out.println("Area of circle:"+area);
-    }            
+
+public class CircleAreaCalculator {
+    public static void main(String[] args) {
+        int radius;
+        final double PI = 3.14159;
+        double area;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter radius of circle: ");
+        radius = scanner.nextInt();
+
+        if (radius <= 0) {
+            System.out.println("Invalid input. Please enter a positive number.");
+            return;
+        }
+
+        area = PI * radius * radius;
+        System.out.println("The area of the circle is: " + area);
+    }
 }
